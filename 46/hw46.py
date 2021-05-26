@@ -11,20 +11,19 @@ class die():
 
 x = die(12)
 print(f'The die rolled a {x.roll()}.')
+x = die()
+print(f'The 2nd die rolled a {x.roll()}.')
 
-
+ 
 class SixSidedDie(die):
-    sides = 6
 
-    def roll(self):
-        import random
-        result = random.randint(1, self.sides)
-        return result
+    def __init__(self):
+        super().__init__(6)
+   
 
 
 x = SixSidedDie()
 print(f'The die rolled a {x.roll()}.')
-
 
 the_list = [5, 8, 7, 3, 9, 0, 4, 2, 1]
 print(the_list)
