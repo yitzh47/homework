@@ -1,0 +1,55 @@
+html{
+    background-color: rgb(71, 150, 246);
+    font-size: 62.5%em;
+    text-align: center;
+
+}
+header {
+    font-weight:bold;
+    border: .5rem solid black;
+    border-style:double;
+    border-radius: 50rem;
+    border-bottom-width: 2rem;
+    border-top-width: 2rem;
+    
+}
+h1{
+    font-style: italic;
+    color:red;
+    font-size: 3rem;
+}
+p {
+   
+
+}
+
+p, article{
+    font-weight: bold;
+    text-align: left;
+    font-size: 1.5rem;
+    font-style:oblique;
+}
+
+article p {
+    font-weight: bold;
+    text-align: left;
+    font-size: 1.2rem;
+    font-style:oblique;
+
+}
+
+h2{
+    text-align:center;
+    font-size:3rem
+}
+
+nav{
+    text-align: center;
+    font-size: 1.75rem;
+    font-style:normal;
+}
+
+
+
+
+
