@@ -3,17 +3,15 @@ html{
     text-align: center;
     background-color:  rgb(71, 150, 246);
     
-   
 }
 
 header {
     font-weight:bold;
-   
     border: .5rem solid black;
     border-style:double;
     border-radius: 50rem;
     border-bottom-width: 5rem;
-    border-top-width: 2rem;
+    border-top-width: 5rem;
     
 }
 
@@ -48,13 +46,21 @@ h2{
     font-size:3rem
 }
 
-nav{
+div{
     text-align: center;
     font-size: 1.75rem;
     font-style:normal;
     border:.5rem solid black;
     border-style: double;
     border-radius: 75px;
+}
+
+a:link{
+    color:rgb(254, 255, 240);
+}
+
+a:visited{
+    color: orange;
 }
 
 
