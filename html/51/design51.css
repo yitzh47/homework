@@ -13,7 +13,7 @@ body {
     padding: auto;
 }
 
-div{
+div {
     
     border: 1px solid black;
     background-color: yellow;
@@ -23,7 +23,8 @@ div{
     box-sizing: border-box;
     padding: 92px 77px 92px 77px;
     display: inline-block;   
+}
 
-   
-
+div:link {
+    background-color: blue;
 }
