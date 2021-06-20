@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La Pizzeria 🍕</title>
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/design.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Viaoda+Libre&display=swap" rel="stylesheet">
@@ -13,7 +14,6 @@
     <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon_io/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon_io/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
-    <link rel="stylesheet" href="css/normalize.css">
 
 </head>
 
@@ -21,10 +21,10 @@
     <header>
 
         <h1>
-            La-<img src="images/pizza_image2.jpg" width="200" />ria
+            La-<img src="images/pizza_image2.jpg" width="100"/>ria
         </h1>
         <nav>
-            <ul>
+            <ul id="come">
                 <li><a href="index.html">
                         La Pizzeria
                     </a>
@@ -40,17 +40,18 @@
                         Order Now
                     </a>
                 </li>
+                
             </ul>
         </nav>
     </header>
-    <audio controls autoplay>
-        <source src="media/Beethoven.mp3">
-    </audio>
+    
     <br>
     <div>
-        <img src="images/pizza_image1.jpg" width=500 height />
-        <img src="images\pizza_bckgrnd.jpg" width=500 height />
-        <img src="images\pizza_image3.jpg" width=500 height />
+        <img src="images/pizza_image1.jpg" width=400 height />
+        <video id="video1"autoplay loop="true">
+            <source src="media/pizza.mp4">
+        </video>
+        <img src="images\pizza_image3.jpg" width=400 height />
     </div>
 
     <article>
@@ -91,12 +92,20 @@
 
     </article>
 
-
-    <p id="koshercopyright">
-        &copy; La Pizzeria is certified kosher.
+    <p id="bee">
+        <audio controls >
+            <source src="media/Beethoven.mp3">
+        </audio>
     </p>
+    <p id="koshercopyright">
+        &copy; La Pizzeria is certified kosher. 
+    </p>
+
+   
 
 
 </body>
+
+
 
 </html>

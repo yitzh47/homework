@@ -1,40 +1,40 @@
-html{
+
+
+body {
     font-size: 62.5%em;
     text-align: center;
     background-color: black;
     color: white;
+    max-width: 80%;
+    margin:auto;
+    margin-top: 400px;
 }
-
-
-
-
-body {
-    max-width: 90%;
-    margin: auto;
-    top: 0;
-
-}
-
-
 
 h1 {
     letter-spacing:.6rem;
-    line-height: 5px;
+    line-height: 3px;
     font-family: 'Viaoda Libre', cursive;
     text-shadow: 3px 2px 1px red;
     font-size: 3.5rem;
-    text-decoration: underline;
 }
 
 header h1{
+
     text-decoration: none;
     font-size: 3rem;
 }
 
 
 
-
 header {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin:auto;
+    width: 90%;
+
+    margin-top: 5rem;
     background-image: url(../images/pizza_image200.jpg);
     font-weight:bold;
     font-style: italic;
@@ -45,13 +45,18 @@ header {
     border-top-width: 3rem;
 }
 
-nav ul{
-    position: fixed;
-    left: 0;
-    right: 0;
-    top:0;
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+audio{
+    line-height: 1px;
+}
 
+nav ul {
+    position: fixed;
+    top: -17px;
+    left: 0;
+    width: 100%;
+    line-height: 2rem;
+    background: rgb(2,0,36);
+    background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(121,9,9,1) 50%, rgba(255,0,0,1) 93%);
 }
 
 
@@ -79,13 +84,13 @@ article{
 }
 div img {
     overflow:hidden;
-    height: 300px;
-
+    width:33.33%;    
+    float: left;
 }
+
 
 h2:active{
     transition: 3s;
-
     transform:rotate(360deg)
 }
 
@@ -95,7 +100,6 @@ h2{
 }
 
 div{
-
     overflow: hidden;
     text-align: center;
     font-size: 1.75rem;
@@ -122,18 +126,14 @@ a:hover{
    text-shadow: 1px 1px 1px red, 0 0 1em red, 0 0 .1em red;
 }
 
-
 nav a:visited{
     color: rgb(33, 214, 9);
-
     text-decoration: none;
-
 }
 
 a:visited{
     color: rgb(68, 29, 240);
     text-decoration: none;
-
 }
 
  p,  h2{
@@ -147,12 +147,16 @@ a:visited{
     text-transform: Capitalize;
     font-size: 2rem;
     font-weight: 800;
+    text-align: center;
+}
+
+#bee{
+    text-align: center;
 }
 
 .menuimg{
     padding: 10px;
     height:50%;
-    
     margin-left: auto;
     margin-right: auto;
     width: 50%;
@@ -171,26 +175,29 @@ li {
     margin:50px 50px 50px 50px
 }
 
-
-
 nav li {
     border: none;
     margin: none;
     display: inline;
     font-size: 20px;
+}
 
+#video1 {
+    padding: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 33.33%;
+    height: 200px;
+    float: left;
 }
 
 video {
-    padding: 10px;
-    height:50%;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-    display: block;
+    padding: px;
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 300px;
+    height: 200px;
+    float: left;
 }
-
-
-
 
 
