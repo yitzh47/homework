@@ -1,0 +1,356 @@
+body {
+    font-size: 62.5%em;
+    text-align: center;
+    background-color: black;
+    color: white;
+    max-width: 80%;
+    padding-top: 400px;
+    margin: auto;
+}
+
+h1 {
+    padding-top: 15px;
+    letter-spacing:.6rem;
+    line-height: 3px;
+    font-family: 'Viaoda Libre', cursive;
+    text-shadow: 3px 2px 1px red;
+    font-size: 3.5rem;
+}
+
+#page-h1{
+    margin-top: 50px;
+}
+
+header h1{
+
+    text-decoration: none;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+#ordernow{
+    color:black;
+    letter-spacing:10px;
+    text-decoration:underline;
+    font-weight: 900;
+    font-size: 1.5rem;
+    animation: blinking 2s linear infinite;
+
+}
+
+@keyframes blinking {
+    50% {
+      opacity: 0;
+    }
+  }
+
+form{
+    display: block;
+    margin:50px;
+}
+
+#backend{
+    color:black;
+    padding: 5px;
+    background-color:white;
+    position: fixed;
+    left: 0;
+    top:33px;
+}
+
+
+label{
+    font-size: 1.1rem;
+    padding-left:10px;
+    box-sizing:border-box;
+    
+}
+input{
+    width: 100%;
+    padding-left:10px;
+}
+
+#actual-order{
+    color:crimson;
+    font-weight: bold;
+    background-color: aqua;
+    border-radius: 50px;
+    display: block;
+    padding: 15px;
+}
+
+.item{
+    overflow-x: scrolled;
+    box-sizing: border-box;
+    padding: 10px 10px 10px 10px;
+
+}
+
+.customer-info{
+    display: inline-block;
+    padding: 10px 10px 10px 10px;
+    width: 33.33%;
+    box-sizing:border-box;
+    
+}
+
+#comments{
+    width: 300%;
+    margin: 0px 15px 0px 15px;;
+  }
+
+#actual-order label{
+    font-size: 1.5rem;
+    display: inline-block;
+    box-sizing:border-box;
+    width: 33.33%; 
+    padding-bottom: 25px; 
+}
+
+div button{
+    width: 10%;
+    margin-left:45%;
+    min-width: 100px;
+}
+
+#scrolled-header{
+    position: fixed;
+    top: 0px;
+    left: 0;
+}
+header {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top:-5px;
+    margin:auto;
+    width: 90%;
+    height: 250px;
+    overflow: hidden;
+    margin-top: 5rem;
+    background-image: url(../images/pizza_image200.jpg);
+    font-weight:bold;
+    font-style: italic;
+    border: .35rem solid white;
+    border-style:double;
+    border-radius: 50rem;
+    border-bottom-width: 3rem;
+    border-top-width: 3rem;
+}
+
+audio{
+    line-height: 1px;
+}
+
+
+#nav1{
+    position: fixed;
+    top: 0px;
+    border:none;
+    left: 0;
+    width: 100%;
+    line-height: 2rem;
+    background: rgb(2,0,36);
+    background-image: url(../images/italy.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: -150px;
+}
+
+p, article{
+    font-weight: bold;
+    text-align: left;
+    font-size: 1.5rem;
+}
+
+article p {
+    padding: 20px 50px 10px 50px;
+    font-weight: bold;
+    text-align: left;
+    font-size: 1.4rem;
+    font-style:oblique;
+
+}
+article{
+    font-size: 1.75rem;
+    padding: 20px 20px 10px 20px;
+    text-align:left;
+    border:.25rem solid white;
+    border-radius: 10px;
+}
+div img {
+    overflow:auto;
+    width:33.33%;  
+    float: left;
+}
+
+
+h2:active{
+    transition: 3s;
+    transform:rotate(360deg)
+}
+
+h2{
+    text-align:center;
+    font-size:3rem;
+}
+
+
+
+div{
+    overflow: hidden;
+    text-align: center;
+    border:.5rem solid white;
+    border-style: double;
+    border-radius: 75px;
+    margin:10px 50px 10px 50px
+}
+
+form div {
+    text-align:left;
+    border:none;
+    border-radius: 0px;
+    margin:0;
+    padding-bottom: 25px;
+}
+
+.description{
+    font-size: 1.7rem;
+    padding: 1rem;
+    overflow: hidden;
+}
+
+a{
+    font-size: 1.2rem;
+    color: red;
+    text-decoration:none;
+}
+
+
+
+.navbar{
+    color:white;
+    padding: 0px;
+}
+
+.navbar:hover{
+   font-size: 1.5em;
+   transition: 0.5s;
+   color: blue;
+   text-shadow: 1px 1px 2px red;
+}
+
+a:hover{
+    text-shadow: 1px 1px 2px blue;
+ }
+
+
+
+ p,  h2{
+     font-family:'Courier New', Courier, monospace;
+    text-decoration: none;
+}
+
+
+#koshercopyright {
+    font-family: 'Times New Roman', Times, serif;
+    text-transform: Capitalize;
+    text-shadow: 3px 2px 1px red;
+    font-size: 2rem;
+    font-weight: 800;
+    text-align: center;
+}
+
+#bee{
+    text-align: center;
+}
+
+.menuimg{
+    padding: 10px;
+    height:50%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    display: block;
+}
+
+ul {
+    list-style-type: none;
+    display: inline;
+}
+
+li {
+    font-family:'Courier New', Courier, monospace;
+    border:.5rem solid white;
+    border-style: double;
+    border-radius: 75px;
+    margin:15px 50px 15px 50px;
+}
+
+nav li {
+    border: none;
+    margin: none;
+    display: inline;
+    font-size: 20px;
+}
+
+#video1 {
+    padding: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 33.33%;
+    height: 200px;
+    float: left;
+}
+
+video {
+    padding: 10px;
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 50%;
+    margin: auto;
+    display: block;
+}
+
+.menulist{
+    margin: 3px;
+}
+
+a.menuitem{
+    letter-spacing: 1px;
+    color: white;
+    margin: 0px;
+    display: inline;
+    font-style: italic;
+    text-decoration: underline;
+}
+h1::first-letter{
+    font-size: 1.2em;
+}
+
+article>p {
+    font-size: 1.2rem;
+}
+@media screen and (max-width:800px) {
+    body{
+        max-width:95%
+    }
+
+    
+    div img {
+        width:100%;
+    }
+
+    #video1{
+        padding: 0px;
+        margin: 0px;
+        width: 100%;
+    }
+
+    article p{
+        padding: 0px;
+    }
+
+
+}
+

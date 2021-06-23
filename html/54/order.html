@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Pizzeria Order Page</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/design.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Viaoda+Libre&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+
+
+</head>
+
+<body>
+    <header>
+
+        <h1>
+            La-<img src="images/pizza_image2.jpg" width="100" />ria
+        </h1>
+        <nav id="nav1">
+            <ul class="navbar">
+                <li><a class="navbar" href="index.html">
+                        La Pizzeria
+                    </a>
+                </li>
+                |
+                <li><a class="navbar" href="Menu.html">
+                        Our Menu
+                    </a>
+                </li>
+                |
+                <li><a class="navbar" href="order.html" target="_blank">
+                        Order Now
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <br>
+
+    <form action="feedback.php" method="post">
+        <div>
+            <label class="customer-info" for="firstName">First Name:
+                <input id="firstName" name="firstName" type="text" required><!--
+            --></label><!--
+
+            --><label class="customer-info" for="lastName">Last Name:
+                <input id="lastName" name="lastName" type="text" required><!--
+            --></label><!--
+
+            --><label class="customer-info" for="tel">Phone Number:
+                <input id="tel" name="tel" type="tel" min="1" max="14" required><!--
+            --></label><!--
+
+            --><label class="customer-info" for="email">Email:
+                <input id="email" name="email" type="email"><!--
+            --></label><!--
+
+            --><label class="customer-info" for="date">Date:
+                <input id="date" name="date" type="date"  required><!--
+            --></label><!--
+
+            --><label class="customer-info" for="rating">Please Rate Your Experience:
+                    <input id="rating" name="rating" type="range" min="0" max="5"><!--
+            --></label><!--
+
+            --><label class="customer-info" for="comments">
+                <input id="comments" name="comments" type="textarea" placeholder="comments?"><!--
+            --></label>
+
+        </div>
+        <div id="actual-order">
+            <h2>Menu:</h2><!--
+            --><label class="item" for="pizza"><br>Personal Pie:<!--
+                --><select name="pizza" id="pizza"><!--
+                    --><option selected>1</option><!--
+                    --><option>2</option><!--
+                    --><option>3</option><!--
+                    --><option>4</option><!--
+                    --><option>5</option><!--
+                --></select><!--
+                --><input class="item"id="notes" name="notes" type="text" placeholder="Enter toppings or notes."><!--
+            --></label><!--
+            
+
+          --><label class="item" for="caesarsalad"><br>Caesar Salad:<!--
+                --><select name="caesarsalad" id="caesarsalad"><!--
+                    --><option selected>1</option><!--
+                    --><option>2</option><!--
+                    --><option>3</option><!--
+                    --><option>4</option><!--
+                    --><option>5</option><!--
+                --></select><!--
+                --><input class="item"id="notes" name="notes" type="text" placeholder="Enter toppings or notes."><!--
+            --></label><!--
+            
+            --><label class="item" for="fettucinealfredo"><br>Fettuccine Alfredo:<!--
+                --><select name="fettucinealfredo" id="fettucinealfredo"><!--
+                    --><option selected>1</option><!--
+                    --><option>2</option><!--
+                    --><option>3</option><!--
+                    --><option>4</option><!--
+                    --><option>5</option><!--
+                --></select><!--
+                --><input class="item"id="notes" name="notes" type="text" placeholder="Enter toppings or notes."><!--
+            --></label>
+
+            <button type="submit">
+                Order
+            </button>
+
+        </div>
+
+
+
+    </form>
+
+</body>
+
+</html

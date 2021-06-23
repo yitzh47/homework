@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Data</title>
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/design.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Viaoda+Libre&display=swap" rel="stylesheet">
+        <link rel="apple-touch-icon" sizes="180x180" href="favicon/favicon_io/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon_io/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon_io/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+    
+        <style>
+            table {
+                padding-top: 20px;
+                width: 100%;
+                border-collapse: collapse;
+                text-align: left;
+    
+            }
+    
+            caption {
+                font-size: 32px;
+                padding-top: 50px;
+                border-bottom: 3px solid white;
+                margin-bottom: 5px;
+            }
+    
+            th {
+                font-size: 1.2rem;
+                font-weight: 900;
+            }
+    
+            th,
+            td {
+                font-weight: 900;
+                padding-left: 5px;
+                border-right: .15rem solid white;
+            }
+    
+            tbody tr:nth-child(2n+1) {
+                background-color: gray;
+                color: black;
+            }
+
+            th:last-of-type{
+                border: none;
+            }
+            td:last-of-type{
+                border: none;
+            }
+
+    
+            tbody tr:last-child{
+                background-color: aquamarine;
+                color:brown;
+            }
+
+            tfoot{
+                border-top: .25rem solid red;
+                background-color: darkturquoise;
+                color:red;
+                font-size: 1.2rem;
+                font-weight: 900;
+
+            }
+        </style>
+    
+    </head>
+    
+    <body>
+        <header>
+    
+            <h1>
+                La-<img src="images/pizza_image2.jpg" width="100" />ria
+            </h1>
+    
+            <nav id="nav1">
+                <ul class="navbar">
+                    <li><a class="navbar" href="index.html">
+                            La Pizzeria
+                        </a>
+                    </li>
+                    |
+                    <li><a class="navbar" href="Menu.html">
+                            Our Menu
+                        </a>
+                    </li>
+                    |
+                    <li><a class="navbar" href="order.html" target="_blank">
+                            Order Now
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <br>
+    
+        <table>
+            <caption>Website Data:</caption>
+            <thead>
+                <tr>
+                    <th>Date:</th>
+                    <th>Website Visitors:</th>
+                    <th>Orders:</th>
+                    <th>Returning Customers:</th>
+                    <th>AVG Items Per Order:</th>
+                    <th>AVG Money Spent:</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>06/23/2021</td>
+                    <td>156</td>
+                    <td>132</td>
+                    <td>86%</td>
+                    <td>5.2</td>
+                    <td>$38.87</td>
+                </tr>
+                <tr>
+                    <td>06/24/2021</td>
+                    <td>98</td>
+                    <td>72</td>
+                    <td>56%</td>
+                    <td>15.6</td>
+                    <td>$20.01</td>
+                </tr>
+                <tr>
+                    <td>06/25/2021</td>
+                    <td>290</td>
+                    <td>210</td>
+                    <td>60%</td>
+                    <td>3.8</td>
+                    <td>$53.92</td>
+                </tr>
+                <tr>
+                    <td>06/26/2021</td>
+                    <td>126</td>
+                    <td>111</td>
+                    <td>77%</td>
+                    <td>5.5</td>
+                    <td>$28.67</td>
+                </tr>
+                <tr>
+                    <td>06/27/2021</td>
+                    <td>273</td>
+                    <td>203</td>
+                    <td>62%</td>
+                    <td>9.8</td>
+                    <td>$59.72</td>
+                </tr>
+                <tr>
+                    <td>06/28/2021</td>
+                    <td>326</td>
+                    <td>311</td>
+                    <td>74%</td>
+                    <td>5.56</td>
+                    <td>$22.27</td>
+                </tr>
+            <tfoot> 
+                <tr>
+                    <td>Average:</td>
+                    <td>211.5</td>
+                    <td>173.16</td>
+                    <td>69%</td>
+                    <td>7.57</td>
+                    <td>$37.24</td>
+                </tr>
+            </tfoot> 
+        </table>
+    </body>
+    
+</html>

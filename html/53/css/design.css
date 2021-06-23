@@ -85,8 +85,8 @@ article{
     border-radius: 10px;
 }
 div img {
-    overflow:hidden;
-    width:33.33%;    
+    overflow:auto;
+    width:33.33%;  
     float: left;
 }
 
