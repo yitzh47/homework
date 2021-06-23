@@ -25,6 +25,7 @@ h1 {
     text-decoration: none;
     font-size: 3rem;
     margin-bottom: 1rem;
+    color:white;
 }
 
 
@@ -47,7 +48,7 @@ form{
     position: fixed;
     overflow: scrolled;
     left: 0;
-    top:33px;
+    top:33.1px;
 }
 
 
@@ -109,9 +110,9 @@ header {
     position: absolute;
     left: 0px;
     right: 0;
-    top:-35px;
+    top:-46.4px;
     margin:auto;
-    width: 90%;
+    width: 99%;
     height: 90px;
     overflow: hidden;
     margin-top: 5rem;
