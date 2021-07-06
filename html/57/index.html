@@ -17,6 +17,8 @@
 
         #hdsht {
             border-radius: 10px;
+            max-height: 100px;
+            max-width: 100px;
         }
 
         @media (min-width:991.98px) {
@@ -85,8 +87,15 @@
             margin: auto;
         }
 
+        #background-code{
+            z-index: -1;
+            position:absolute;
+            width: 100%;
+            left: 0;
+            top: 0;
 
         }
+
     </style>
 </head>
 
@@ -96,10 +105,10 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom">
             <div class="container-fluid">
                 <a class="navbar-brand" href="index.html">
-                    <img id="hdsht" src="images/headshot.jpg" alt="" width="60" height="85">
+                    <img id="hdsht" src="images/headshot.jpg" alt="" >
                 </a>
                 <a class="navbar-brand nvv" href="index.html">
-                    <h1>Yitzi Hertz</h1>
+                    <h1 class="d-flex justify-content-center">Yitzi Hertz</h1>
                     <h2>Software Engineer</h2>
                 </a>
                 <div id="navborder"> </div>
@@ -142,6 +151,7 @@
     </header>
 
     <div class="container border-bottom">
+        <img id="background-code" src="images/image4.jpg">
 
 
 
