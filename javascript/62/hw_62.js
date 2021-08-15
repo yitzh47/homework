@@ -33,6 +33,7 @@ const intCalc = (function(){
         let x = "1." + percentage;
         interest_percentage = x;
     }
+    
 
     function setYears(yr){
         years = yr;
