@@ -1,3 +1,3 @@
 'use strict';
 var name = "Yitz H";
-var email = "yitzh@gmail.com";
+var email = "yitzH@gmail.com";

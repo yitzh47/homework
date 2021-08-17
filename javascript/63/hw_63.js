@@ -33,7 +33,4 @@
 
     transaction.apply(checking, [11]);
     console.log('checking + 11 using separate function & apply, balance is =', checking.balance);
-
-
-
 }());
