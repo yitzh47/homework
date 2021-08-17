@@ -9,7 +9,6 @@ function our_every(theArray, callback){
         if(!callback(theArray[i])){
             return false;
         }
-        
     }
     return true;  
 }
