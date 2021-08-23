@@ -1,7 +1,7 @@
 window.myApp = window.myApp || {};
 
 
-window.myApp = (function(theModule) {
+window.myApp.utils = (function(theModule) {
     'use strict';
 
 
@@ -23,5 +23,5 @@ window.myApp = (function(theModule) {
 
     return theModule;
 
-}(window.myApp || {}));
+}(window.myApp.utils || {}));
 

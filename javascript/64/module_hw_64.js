@@ -1,6 +1,6 @@
-window.module = window.module || {};
+window.myApp = window.myApp || {};
 
-window.module = (function(theModule) {
+window.myApp.utils = (function(theModule) {
     'use strict';
 
     theModule.stringCaseInsensitiveEquals = function(str, str2){
@@ -15,4 +15,4 @@ window.module = (function(theModule) {
     };
 
     return theModule;
-}(window.module || {}));
+}(window.myApp.utils || {}));
