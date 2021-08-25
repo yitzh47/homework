@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Chooser</title>   
+    <link rel="icon" type="image/png" href="favicon/ColorWheel.png"/>
+
+    <style>
+      body{
+        margin: 0;
+      }
+      ul, li{
+        display: inline;
+        padding:0.5em;
+        margin: 0;
+        text-decoration: none;
+      }
+      h1{
+        padding-top: .3em;
+        padding-bottom: 8px;
+      }
+      header, h1{
+        line-height:1em;
+        text-align: center;
+        font-size: 2em;
+        font-weight: 900;
+        background-color:black;
+        color:white;
+        margin: 0;
+      }
+      header{
+        min-height:150px;
+      }
+      #colorDisplay{
+        display: block;
+        height: 80vh;
+      }
+      button{
+        color: white;
+        background-color: black;
+        text-decoration: none;
+        border-color: white;
+        border-radius: 7px;
+      }
+    </style> 
+  </head>
+
+  <body>
+    <header>
+      <h1 id="colorHeader">Color Chooser</h1>
+          <div id="colorbar">
+            <ul id="loopGrid">
+              <li><button id="colorArray">Start Colors By Array</button></li>
+              <li><button id="colorRGB">Start Colors By Loop RGB</button></li>
+              <li><button id="colorRandom">Start Colors By Random</button></li>
+            </ul>
+          </nav>
+  </header>
+    <div id="colorDisplay">
+        
+    </div>
+    <script src="hw_65.js"></script>
+  </body>
+</html>
