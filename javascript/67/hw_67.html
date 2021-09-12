@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #messageBoxButton {
+            display: block;
+            margin: auto;
+        }
+
+        #messageBox{
+            box-sizing: border-box;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 400px;
+            height: 200px;
+            margin-top: -100px;
+            margin-left: -200px;
+            border: 1px solid black;
+            display: none;
+        }
+
+        .buttons{
+            position: absolute;
+            bottom: 5px;
+            left: 69px;
+        }
+
+        #text{
+            border: 1px solid red;
+            width: 100%;
+            height: 164px;
+            position: absolute;
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="messageBoxButton">Message Box</button>
+
+    <div id="messageBox">
+        <div id="text">
+            This is a test of the emergency broadcast system.
+
+
+        </div>
+        <div class="buttons">
+            <button id="close">Ok</button>
+            <label>
+                <button for="newText" id="newTextBut">Upload</button>
+            </label>
+            <input id="newText">
+
+        </div>
+    </div>
+
+    <script src="hw_67.js"></script>
+</body>
+
+</html>
