@@ -7,12 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        #messageBoxButton {
+        #messagePopUpButton {
             display: block;
             margin: auto;
         }
 
-        #messageBox{
+        #messagePopUp{
             box-sizing: border-box;
             position: absolute;
             top: 50%;
@@ -42,9 +42,9 @@
 </head>
 
 <body>
-    <button id="messageBoxButton">Message Box</button>
+    <button id="messagePopUpButton">Message Box</button>
 
-    <div id="messageBox">
+    <div id="messagePopUp">
         <div id="text">
             This is a test of the emergency broadcast system.
 
@@ -53,9 +53,9 @@
         <div class="buttons">
             <button id="close">Ok</button>
             <label>
-                <button for="newText" id="newTextBut">Upload</button>
+                <button for="textInput" id="textInputButton">Upload</button>
             </label>
-            <input id="newText">
+            <input id="textInput">
 
         </div>
     </div>

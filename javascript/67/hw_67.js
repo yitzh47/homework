@@ -1,34 +1,41 @@
-(function () {
+window.messageBox = (function (objArr) {
     'use strict';
   
-    const messageBoxButton = get('messageBoxButton');
-    const newTextBut = get('newTextBut');
+    const messagePopUpButton = get('messagePopUpButton');
+    const textInputButton = get('textInputButton');
     const close = get('close');
-    const messageBox = get('messageBox');
+    const messagePopUp = get('messagePopUp');
     const text = get('text');
-    const newText = get('newText');
+    const textInput = get('textInput');
   
     function get(id) {
       return document.getElementById(id);
     }
+
+    function textChange(txt){
+      text.innerText = txt;
+      textInput.value = '';
+    }
   
-    messageBoxButton.addEventListener('click', () => {
-        messageBox.style.display = 'block';
+    messagePopUpButton.addEventListener('click', () => {
+      messagePopUp.style.display = 'block';
     });
   
-    newTextBut.addEventListener('click', () => {
-
-      text.innerText = newText.value;
-      newText.value = '';
-      
-     
+    textInputButton.addEventListener('click', () => {
+      textChange(textInput.value);
     });
   
     close.addEventListener('click', () => {
-        messageBox.style.display = 'none';
-        messageBox.setInnerText('');
+      messagePopUp.style.display = 'none';
+      textChange('');
 
     });
+
+    objArr.show = function show(txt){
+      textChange(txt);
+    };
+
+    return objArr;
   
  
-  }());
+  }(window.messageBox || {}));
