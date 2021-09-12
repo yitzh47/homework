@@ -15,6 +15,7 @@ window.messageBox = (function (objArr) {
     function textChange(txt){
       text.innerText = txt;
       textInput.value = '';
+      return "text changed to " + txt;
     }
   
     messagePopUpButton.addEventListener('click', () => {
