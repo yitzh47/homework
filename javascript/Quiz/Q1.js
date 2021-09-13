@@ -16,3 +16,5 @@
     console.log(originalArray, "originalArray");
     console.log(newArray, "newArray");
 }());
+
+// SL - nice
