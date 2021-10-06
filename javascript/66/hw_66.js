@@ -12,7 +12,7 @@
     return document.getElementById(id);
   }
 
-  function setColor(newColor) {
+  function setColor(newColor) { 
     addRow(colorHeader.style.color, newColor, new Date().toLocaleTimeString());
     colorDisplay.style.backgroundColor = newColor;
     colorHeader.style.color = newColor;
@@ -42,7 +42,7 @@
       let i = 0;
       noChangeArr = setInterval(() => {
         setColor(arr[i++]);
-        if (i === 3) {
+        if (i === arr.length) {
           i = 0;
         }
       }, 1000);
@@ -58,7 +58,7 @@
   clrRGB.addEventListener('click', () => {
 
     if (!noChangeRGB) {
-      clrRGB.innerText = "Stop Loop RGB";
+      clrRGB.innerText = "Stop Colors By RGB";
       let r = 0;
       let rGo = false;
       let g = 0;
@@ -82,20 +82,20 @@
             rGo = false;
           }
         }
-        if (b === 255) {
+        if (b > 255) {
           b = 0;
           gGo = true;
         }
-        if (g === 255) {
+        if (g > 255) {
           g = 0;
           gGo = true;
           rGo = true;
         }
-      }, 50);
+      }, 10);
     }
     else {
       noChangeRGB = clearInterval(noChangeRGB);
-      clrRGB.innerText = "Start Loop RGB";
+      clrRGB.innerText = "Start Colors By RGB";
     }
   });
 
@@ -104,14 +104,14 @@
   clrRandom.addEventListener('click', () => {
 
     if (!noChangeRandom) {
-      clrRandom.innerText = "Stop Loop Random";
+      clrRandom.innerText = "Stop Colors By Random";
       noChangeRandom = setInterval(() => {
         setColor("rgb(" + Math.floor(Math.random() * 256) + "," + Math.floor(Math.random() * 256) + "," + Math.floor(Math.random() * 256) + ")");
       }, 1000);
     }
     else {
       noChangeRandom = clearInterval(noChangeRandom);
-      clrRandom.innerText = "Start Loop Random";
+      clrRandom.innerText = "Start Colors By Random";
     }
   });
 
