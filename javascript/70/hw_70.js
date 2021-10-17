@@ -12,12 +12,22 @@
     formBox.append('<button id="subButton" disabled>submit</button>');
 
     formBox.appendTo('body'); 
-
+    const name = $("#name");
+    const address = $("#address");
     const subButton = $("#subButton");
     const checkLicense = $("#checkLicense");
 
+    subButton.on('click', () => {
+        const displayName = name.val();
+        const displayaddress = address.val();
+
+        $(`<div>Name: ${name.val()} <br> Address: ${address.val()} </div>`).appendTo('body');
+    });
+
+    let trueOrFalse = 1;
+
     checkLicense.change(function() {
-        subButton.prop('disabled', false);
+        subButton.prop('disabled', ++trueOrFalse % 2);
         }
     );
 }());
