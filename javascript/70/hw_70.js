@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    const formBox = $('<div id="form"></div>');      
+    const formBox = $('<div id="form"></div>');
     formBox.css('width', '250px');
     formBox.css('height', '300px');
     formBox.css('margin', 'auto');
@@ -11,23 +11,18 @@
     formBox.append('<input id="checkLicense" type="checkbox">');
     formBox.append('<button id="subButton" disabled>submit</button>');
 
-    formBox.appendTo('body'); 
+    formBox.appendTo('body');
     const name = $("#name");
     const address = $("#address");
     const subButton = $("#subButton");
     const checkLicense = $("#checkLicense");
 
     subButton.on('click', () => {
-        const displayName = name.val();
-        const displayaddress = address.val();
-
-        $(`<div>Name: ${name.val()} <br> Address: ${address.val()} </div>`).appendTo('body');
+        $('body').append(`<div>Name: ${name.val()}<br>Address: ${address.val()} </div>`);
     });
 
     let trueOrFalse = 1;
-
-    checkLicense.change(function() {
+    checkLicense.change(function () {
         subButton.prop('disabled', ++trueOrFalse % 2);
-        }
-    );
+    });
 }());
