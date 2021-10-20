@@ -1,9 +1,11 @@
+/* global pcs */
+
 (function() {
     'use strict';
 
     const fileInput = $('#fileInput');
     const fileInputButton = $('#fileInputButton');
-    const fileShow = $('<div id="fileShow"></div>');
+    const fileShow = $('<pre id="fileShow"></pre>');
     const buffer = $('<img src="https://c.tenor.com/K2UGDd4acJUAAAAM/load-loading.gif">');
     
     
@@ -16,7 +18,7 @@
         buffer.show();
 
         setTimeout(function(){
-            buffer.hide();
+            
             fetch(fileInput.val())
             .then(r => {
                 if (!r.ok) {
@@ -27,8 +29,14 @@
                     return r.text();
                 }
              })
-            .then(t =>fileShow.append(t))
-            .catch(err => console.log('OOPS', err));
+            .then(t => {
+                buffer.hide();
+                fileShow.text(t);
+            })
+            .catch(err => {
+                buffer.hide();  
+                pcs.messageBox.show(`${err.status} ${err.statusText}`);
+            });
         }, 1500);
         
         
