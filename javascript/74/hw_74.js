@@ -9,7 +9,7 @@
     searchBox.change(function () {
         showImage.empty();
         buffer.show();
-        
+
         $.getJSON(`https://api.flickr.com/services/feeds/photos_public.gne?tags=${searchBox.val()}&format=json&jsoncallback=?`)
             .done(function (data) {
                 console.log(data);
