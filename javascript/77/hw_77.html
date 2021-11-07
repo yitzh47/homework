@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,
+        body,
+        #potatoRoom {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #potatoRoom {
+            background-image: url(media/background.jpg);
+            background-repeat: no-repeat;
+            background-size: 100%
+        }
+
+        #potato_body,
+        #mustach_mouth,
+        #droopy_eyes {
+            position: absolute;
+            top: 100px;
+        }
+
+        #potato_body {
+            height: 300px;
+            left: 475px;
+            top: 170px;
+            z-index: 1;
+        }
+
+        #mustach_mouth {
+            left: 520px;
+            top: 335px;
+            z-index: 2;
+        }
+
+        #droopy_eyes {
+            left: 544px;
+            top: 231px;
+            z-index: 2;
+        }
+    </style>
+</head>
+
+<body>
+    <audio controls autoplay loop="true" src="media/happy-mood-and-ukulele-version-60s-9895.mp3"></audio>
+    <div id="potatoRoom">
+        <img id="potato_body" src="media/potat.png">
+        <img id="mustach_mouth" src="media/mustach_mouth.png">
+        <img id="droopy_eyes" src="media/droopy_eyes.png">
+
+    </div>
+
+
+
+    <script src="hw_77.js"></script>
+</body>
+
+</html>
