@@ -17,16 +17,41 @@
         }
 
         #potatoRoom {
-            background-image: url(media/background.jpg);
+            background-image: url(media/background/stage.jpg);
             background-repeat: no-repeat;
-            background-size: 100%
+            background-size: 100%;
+            height: 100%;
         }
 
+        audio {
+            float: left;
+        }
+
+        #backgrounds{
+            border: 10px solid black;
+            top: 64px;
+            left: 10px;
+            height: 100px;
+            width: 150px;
+            background-image: url(media/background/couch.jpg);
+            background-size: 100%;
+            background-repeat: no-repeat;
+        }
+
+        #backgrounds,
         #potato_body,
         #mustach_mouth,
-        #droopy_eyes {
+        #droopy_eyes,
+        #regular_nose,
+        #center_eyes,
+        #down_eyes,
+        #mustache_face,
+        #purple_eyes,
+        #red_eyes,
+        #red_lips,
+        #red_nose,
+        #teeth {
             position: absolute;
-            top: 100px;
         }
 
         #potato_body {
@@ -37,26 +62,84 @@
         }
 
         #mustach_mouth {
-            left: 520px;
-            top: 335px;
-            z-index: 2;
+            left: 305px;
+            top: 5px;
+        }
+
+        #teeth {
+            left: 410px;
+            top: -10px;
+        }
+
+        #red_lips {
+            left: 534px;
+            top: 2px;
+        }
+
+        #red_nose {
+            left: 658px;
+            top: 7px;
+        }
+
+        #regular_nose {
+            left: 758px;
+            top: 7px;
+        }
+
+        #red_eyes {
+            left: 836px;
+            top: -1px;
+        }
+
+        #purple_eyes {
+            left: 971px;
+            top: -1px;
+        }
+
+        #down_eyes {
+            left: 1077px;
+            top: 2px;
+        }
+
+        #center_eyes {
+            left: 1166px;
+            top: 2px;
         }
 
         #droopy_eyes {
-            left: 544px;
-            top: 231px;
-            z-index: 2;
+            left: 1277px;
+            top: 14px;
+        }
+
+        #mustache_face {
+            left: 1215px;
+            top: 63px;
         }
     </style>
 </head>
 
 <body>
-    <audio controls autoplay loop="true" src="media/happy-mood-and-ukulele-version-60s-9895.mp3"></audio>
+    <div>
+        <audio controls autoplay muted loop="true"
+            src="media/audio/happy-mood-and-ukulele-version-60s-9895.mp3"></audio>
+
+    </div>
+
     <div id="potatoRoom">
-        <img id="potato_body" src="media/potat.png">
+        <div id="backgrounds"></div>
+        <img id="potato_body" src="media/potato.png">
         <img id="mustach_mouth" src="media/mustach_mouth.png">
         <img id="droopy_eyes" src="media/droopy_eyes.png">
-
+        <img id="regular_nose" src="media/regular_nose.png">
+        <img id="center_eyes" src="media/center_eyes.png">
+        <img id="down_eyes" src="media/down_eyes.png">
+        <img id="mustache_face" src="media/mustache_face.png">
+        <img id="purple_eyes" src="media/purple_eyes.png">
+        <img id="red_eyes" src="media/red_eyes.png">
+        <img id="red_lips" src="media/red_lips.png">
+        <img id="red_nose" src="media/red_nose.png">
+        <img id="teeth" src="media/teeth.png">
+        
     </div>
 
 

@@ -1,38 +1,40 @@
 (function () {
     'use strict';
 
-    const potato_body = document.getElementById('potato_body');
-    const mustach_mouth = document.getElementById('mustach_mouth');
-    const droopy_eyes = document.getElementById('droopy_eyes');
     const potatoRoom = document.getElementById('potatoRoom');
+    const backgrounds = document.getElementById('backgrounds');
     let dragging;
     let zIndexIncrement = 0;
+    let dragElem;
 
     function startDrag(e) {
-        let elem = document.getElementById(e.path[0].attributes[0].nodeValue);
-        dragging = { x: e.offsetX, y: e.offsetY };
-        potatoRoom.addEventListener('mousemove', drag);
-        elem.addEventListener('mouseup', () => {
-            endMouseMove();
-        });
+        dragElem = document.getElementById(e.target.id);
+        if (e.target.id !== 'backgrounds') {
+            dragging = { x: e.offsetX, y: e.offsetY };
+            potatoRoom.addEventListener('mousemove', drag);
+            dragElem.addEventListener('mouseup', endMouseMove);
+        }
+        else if (e.target.id === 'backgrounds') {
+            let choosing = getComputedStyle(backgrounds).backgroundImage;
+            let chosen = getComputedStyle(potatoRoom).backgroundImage;
+            potatoRoom.style.backgroundImage = choosing;
+            backgrounds.style.backgroundImage = chosen;
+            localStorage.setItem('background', JSON.stringify({ current: choosing, old: chosen }));
+        }
     }
 
     function drag(event) {
         event.preventDefault();
         if (dragging) {
-            let id = event.path[0].attributes[0].nodeValue;
-            let elem = document.getElementById(id);
-            elem.style.left = `${event.clientX - dragging.x}px`;
-            elem.style.top = `${event.clientY - dragging.y}px`;
-            elem.style.zIndex = ++zIndexIncrement;
-            let position = JSON.stringify({ x: elem.style.left, y: elem.style.top, z: zIndexIncrement});
-            localStorage.setItem(id, position);
+            dragElem.style.left = `${event.clientX - dragging.x}px`;
+            dragElem.style.top = `${event.clientY - dragging.y}px`;
+            dragElem.style.zIndex = ++zIndexIncrement;
+            let position = JSON.stringify({ x: dragElem.style.left, y: dragElem.style.top, z: zIndexIncrement });
+            localStorage.setItem(`${dragElem.id}`, position);
         }
     }
 
-    document.body.addEventListener('mouseleave', () => {
-        endMouseMove();
-    });
+    document.body.addEventListener('mouseleave', endMouseMove);
 
     function endMouseMove() {
         dragging = false;
@@ -43,17 +45,30 @@
         if (localStorage.getItem(element)) {
             let elemFromStorage = JSON.parse(localStorage.getItem(element));
             let elem = document.getElementById(element);
-            elem.style.left = elemFromStorage.x;
-            elem.style.top = elemFromStorage.y;
-            elem.style.zIndex = elemFromStorage.z;
-
+            if (element !== 'background') {
+                elem.style.left = elemFromStorage.x;
+                elem.style.top = elemFromStorage.y;
+                elem.style.zIndex = elemFromStorage.z;
+                zIndexIncrement = elemFromStorage.z > zIndexIncrement ? elemFromStorage.z : zIndexIncrement;
+            } else if (element === 'background') {
+                backgrounds.style.backgroundImage = elemFromStorage.old;
+                potatoRoom.style.backgroundImage = elemFromStorage.current;
+            }
         }
     }
 
-    potato_body.addEventListener('mousedown', (e) => startDrag(e));
-    mustach_mouth.addEventListener('mousedown', (e) => startDrag(e));
-    droopy_eyes.addEventListener('mousedown', (e) => startDrag(e));
+    document.body.addEventListener('mousedown', (e) => startDrag(e));
     positionFromStorage('potato_body');
     positionFromStorage('mustach_mouth');
     positionFromStorage('droopy_eyes');
+    positionFromStorage('regular_nose');
+    positionFromStorage('center_eyes');
+    positionFromStorage('down_eyes');
+    positionFromStorage('mustache_face');
+    positionFromStorage('purple_eyes');
+    positionFromStorage('red_eyes');
+    positionFromStorage('red_lips');
+    positionFromStorage('red_nose');
+    positionFromStorage('teeth');
+    positionFromStorage('background');
 }());
