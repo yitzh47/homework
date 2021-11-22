@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #numberOfAnts {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 50px;
+        }
+
+        #createAnt {
+            position: absolute;
+            top: 10px;
+            left: 75px;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas"></canvas>
+    <form>
+        <input type="number" id="numberOfAnts" min="1" max="200" value="20"></input>
+        <button id="createAnt">Create Ant</button>
+
+    </form>
+    <script src="hw_81.js"></script>
+</body>
+
+</html>
