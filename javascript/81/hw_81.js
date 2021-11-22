@@ -59,7 +59,7 @@
             ants.push(new Ant(theCanvas.width / 2, theCanvas.height / 2));
         }
     }
-    //createThousandAnts();
+    createThousandAnts();
 
 
     function drawAnts(timeStamp) {
