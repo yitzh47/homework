@@ -72,7 +72,6 @@
         requestAnimationFrame(drawAnts);
     }
 
-
     createAnt.addEventListener('click', (e) => {
         e.preventDefault();
         let numOf = numberOfAnts.value;
