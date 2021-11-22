@@ -66,8 +66,6 @@
         context.clearRect(0, 0, theCanvas.width, theCanvas.height);
         ants.forEach(ant => {
             ant.drawAnt.bind(ant)(timeStamp);
-            //ant.drawAnt(timeStamp);
-            //console.log(ant);
         });
         requestAnimationFrame(drawAnts);
     }
