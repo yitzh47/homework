@@ -2,6 +2,7 @@
     'use strict';
 
     const canvas = document.getElementById('theCanvas');
+    const restartBtn = document.getElementById('restart');
     const context = canvas.getContext('2d');
 
     const THING_SIZE = 64;
@@ -18,7 +19,7 @@
 
     let gameOver = false;
     let score = 0;
-    
+
     let speed = 500;
 
     class Snake {
@@ -47,7 +48,7 @@
 
         move() {
             let xy = this.xy;
-            let oldSnakeHead = {x: xy[xy.length - 1].x, y: xy[xy.length - 1].y};
+            let oldSnakeHead = { x: xy[xy.length - 1].x, y: xy[xy.length - 1].y };
 
             switch (this.direction) {
                 case 'ArrowRight':
@@ -75,7 +76,7 @@
             }
 
             // Check if snake hit itself
-            for (let i = 0; i < this.xy.length - 1; i++) {  
+            for (let i = 0; i < this.xy.length - 1; i++) {
                 if (this.xy[i].x === oldSnakeHead.x && this.xy[i].y === oldSnakeHead.y) {
                     gameOver = true;
                 }
@@ -109,7 +110,7 @@
                 if (this.x === snake.xy[i].x && this.y === snake.xy[i].y) {
                     this.move();
                 }
-            }            
+            }
             this.draw();
         }
 
@@ -126,7 +127,7 @@
     function gameLoop() {
         context.clearRect(0, 0, canvas.width, canvas.height);
 
-        
+
         context.font = 'bold 30px Arial';
         let highestScore = localStorage.getItem("highScore") || 0;
         if (score > highestScore) {
@@ -147,6 +148,9 @@
             context.fillText('Game Over', canvas.width / 2 - 80, canvas.height / 2);
             crashSound.currentTime = 0; // in case it was playing
             crashSound.play();
+            restartBtn.style.display = 'block';
+            restartBtn.style.top = `${canvas.height / 2 + 50}px`;
+            restartBtn.style.left = `${canvas.width / 2 - 50}px`;
         }
     }
 
@@ -162,4 +166,16 @@
     appleImg.onload = () => {
         apple = new Apple();
     };
+
+    restartBtn.addEventListener('click', () => {
+        reStartGame();
+    }
+    );
+
+    function reStartGame() {
+        restartBtn.style.display = 'none';
+        gameOver = false;
+        snake = new Snake();
+        setTimeout(gameLoop, speed);
+    }
 }());
