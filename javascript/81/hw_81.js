@@ -4,8 +4,7 @@
     const theCanvas = document.getElementById('canvas');
     const createAnt = document.getElementById('createAnt');
     const numberOfAnts = document.getElementById('numberOfAnts');
-    const context = theCanvas.getContext('2d');
-    const ants = [];
+
 
     function resizeCanvas() {
         theCanvas.width = window.innerWidth;
@@ -13,16 +12,20 @@
     }
     window.addEventListener('resize', resizeCanvas);
     resizeCanvas();
-
-    const ANT_WIDTH = 2;
-    const ANT_HEIGHT = 2;
+    const context = theCanvas.getContext('2d');
 
     class Ant {
+
+        static ANT_WIDTH = 4;
+        static ANT_HEIGHT = 2;
 
         constructor(x, y) {
             this.x = x;
             this.y = y;
-            this.oldTimeStamp;
+        }
+
+        nextRandPixel(){
+            return Math.ceil((Math.random() * 3) - 2);
         }
 
         drawAnt(timeStamp) {
@@ -31,54 +34,65 @@
             }
             const deltaTime = timeStamp - this.oldTimeStamp;
             this.oldTimeStamp = timeStamp;
+            let timeOffset = deltaTime * 0.5;
 
-            let dx = (Math.random() * 2) - 1;
-            let dy = (Math.random() * 2) - 1;
+            let dx = this.nextRandPixel();
+            let dy = this.nextRandPixel();
 
-            let checkXInScreen = this.x + dx * (deltaTime * 1);
-            let checkYInScreen = this.y + dy * (deltaTime * 1);
+            let checkXInScreen = this.x + dx * timeOffset;
+            let checkYInScreen = this.y + dy * timeOffset;
 
-            if (checkYInScreen >= window.innerHeight || checkYInScreen <= 0) {
-                dy = -dy;
+            if (checkYInScreen >= window.innerHeight) {
+                this.y = window.innerHeight - Ant.ANT_HEIGHT;
             }
-            if (checkXInScreen >= window.innerWidth || checkXInScreen <= 0) {
-                dx = -dx;
+            else if (checkYInScreen <= 0){
+                this.y = Ant.ANT_HEIGHT;
             }
 
-            this.x += dx * (deltaTime * 0.5);
-            this.y += dy * (deltaTime * 0.5);
-            console.log(dx, this.y);
+            if (checkXInScreen >= window.innerWidth) {
+                this.x = window.innerWidth - Ant.ANT_WIDTH;
+            }
+            else if (checkXInScreen <= 0) {
+                this.x = Ant.ANT_WIDTH;
+            }
+
+            this.x += dx * timeOffset;
+            this.y += dy * timeOffset;
 
             context.beginPath();
-            context.fillRect(this.x, this.y, ANT_WIDTH, ANT_HEIGHT);
+            context.fillRect(this.x, this.y, Ant.ANT_WIDTH, Ant.ANT_HEIGHT);
         }
     }
+
+    const ants = [];
 
     function createThousandAnts() {
         for (let i = 0; i < 1000; i++) {
             ants.push(new Ant(theCanvas.width / 2, theCanvas.height / 2));
         }
     }
-    createThousandAnts();
 
+    createAnt.addEventListener('click', (e) => {
+        e.preventDefault();
+        for (let i = 0; i < Number(numberOfAnts.value); i++) {
+            ants.push(new Ant(...randAntPosition()));
+        }
+    });
+
+    function randAntPosition() {
+        let x = Math.ceil((Math.random() * window.innerWidth) - 1);
+        let y = Math.ceil((Math.random() * window.innerHeight) - 1);
+        return  [x, y];
+    }
 
     function drawAnts(timeStamp) {
         context.clearRect(0, 0, theCanvas.width, theCanvas.height);
         ants.forEach(ant => {
-            ant.drawAnt.bind(ant)(timeStamp);
+            ant.drawAnt(timeStamp);
         });
         requestAnimationFrame(drawAnts);
     }
 
-    createAnt.addEventListener('click', (e) => {
-        e.preventDefault();
-        let numOf = numberOfAnts.value;
-        for (let i = 0; i < numOf; i++) {
-            ants.push(new Ant((Math.random() * window.innerWidth) - 1, (Math.random() * window.innerHeight) - 1));
-        }
-    });
-
-    requestAnimationFrame(drawAnts);
-
-
+    createThousandAnts();
+    drawAnts(0);
 }());
