@@ -18,6 +18,7 @@
 
     let gameOver = false;
     let score = 0;
+    
     let speed = 500;
 
     class Snake {
@@ -125,8 +126,16 @@
     function gameLoop() {
         context.clearRect(0, 0, canvas.width, canvas.height);
 
+        
         context.font = 'bold 30px Arial';
-        context.fillText(`Score: ${score}`, canvas.width - 160, 40);
+        let highestScore = localStorage.getItem("highScore") || 0;
+        if (score > highestScore) {
+            highestScore = score;
+            localStorage.setItem("highScore", highestScore);
+        }
+
+        context.fillText(`High Score: ${highestScore}`, canvas.width - 250, 80);
+        context.fillText(`Score: ${score}`, canvas.width - 250, 40);
 
         snake.move();
         apple.draw();
