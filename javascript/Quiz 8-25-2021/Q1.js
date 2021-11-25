@@ -8,6 +8,7 @@
         for(let i=0; i<arr.length; i++){
             newArr[i] = func(arr[i]);
         }
+        newArr.map(c => c * 2);
         return newArr;
     }
 
