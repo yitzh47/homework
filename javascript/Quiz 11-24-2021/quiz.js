@@ -20,6 +20,7 @@
         }
         get total() {
             let total = 0;
+            // SL - not a problem, but why not use forEach?
             for (let i = 0; i < this.items.length; i++) {
                 total += this.items[i].price * this.items[i].quantity;
             }
@@ -52,6 +53,7 @@
     function displayHtml(order) {
         const orderInstance = document.createElement('div');
         //Using innerHTML as apposed to innerText, because I am assuming valadition was done before entering the data to a json file.
+        // SL - in reality of course this wouldnt be a json file, it would be data from a server. Not sure I would make this assumption...
         orderInstance.innerHTML = "<hr>";
         orderInstance.innerHTML += `<h4>Customer: ${order.customerName}</h4>`;
         orderInstance.innerHTML += `<h4>Address: ${order.customerAddress}</h4>`;
@@ -77,3 +79,5 @@
 
 
 }());
+
+// SL - nice - 100
