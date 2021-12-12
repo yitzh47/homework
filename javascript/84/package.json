@@ -1,0 +1,18 @@
+{
+  "name": "hw_84",
+  "version": "1.0.0",
+  "description": "homework 84",
+  "main": "jquery-3.6.0.min.js",
+  "dependencies": {
+    "jquery": "^3.6.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "hw"
+  ],
+  "author": "I",
+  "license": "ISC"
+}
