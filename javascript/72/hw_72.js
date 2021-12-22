@@ -40,5 +40,6 @@
         for (let i = 0; i < recipeJson.recipe.length; i++) {
             recipeIngredients.append(`<li>${recipeJson.recipe[i]}</li>`);
         }
+        
     }
 }());

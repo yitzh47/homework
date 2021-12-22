@@ -2,6 +2,7 @@
   "name": "hw_84",
   "version": "1.0.0",
   "description": "homework 84",
+  "private": true,
   "main": "jquery-3.6.0.min.js",
   "dependencies": {
     "jquery": "^3.6.0"

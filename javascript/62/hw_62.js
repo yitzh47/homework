@@ -1,7 +1,5 @@
 'use strict';
 
-
-
 const dayOfweek = (function(){
 
     let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];

@@ -1,5 +1,6 @@
 body{
     font-family:  helvetica , arial, sans-serif;
+    margin: 0;
 }
 
 nav, footer {
@@ -20,20 +21,18 @@ nav, footer {
     flex-wrap: nowrap;
     justify-content:flex-start;
     align-items:center;
-    
+
 }
 
 .navbar-li{
+    scroll-behavior: smooth;
+
     display: flex;
     padding-left: 15px;
 }
 
 .navbar-li:first-child{
-    padding-left: 7px;
-}
-
-#copyright {
-    padding-left: 9px;
+    padding-left: 0px;
 }
 
 .navbar-a{
@@ -60,7 +59,6 @@ footer{
     width: 80%;
     margin: auto;
     padding: 45px 0px 45px 0px;
-    
 }
 
 header{
@@ -73,7 +71,6 @@ header{
     padding: 25px 0px 25px 0px;
     margin:auto;
     margin-top: 45px;
-
 }
 
 #title{
@@ -87,7 +84,6 @@ header{
     margin: auto; 
     display:grid;
     gap: 1em;
-    
 }
 
 .prod-item {
@@ -199,7 +195,6 @@ tr:hover, tbody tr:hover{
     font-weight: 900;
 }
 
-
 #financials1, #sign-up1, #products1, #about-us1{
     position: absolute;
     margin-top: -45px;
@@ -231,12 +226,7 @@ tr:hover, tbody tr:hover{
     
     #cont{
         width: 80%;
-    }
-
-   
-
-
-   
+    } 
 }
 
 

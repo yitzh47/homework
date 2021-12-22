@@ -4,9 +4,9 @@
     
     let clickCount = 0;
     $(document).ready(function() {
-        $('#btn').click(function() {   
-            $('#result').text(`Button clicked ${++clickCount} times`);
-        });
+        $('#btn').click(() =>     
+            $('#result').text(`Button clicked ${++clickCount} times`)
+        );
     });
 
 }());
