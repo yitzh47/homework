@@ -2,8 +2,6 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 
-
-
 module.exports = {
     mode: 'production',
     entry: './src/index.js',
@@ -16,7 +14,6 @@ module.exports = {
         title: 'HW86',
         template: './src/index.html'
     }),
-    //// banner not working
     new webpack.BannerPlugin("hi")
     ],
     module: {
