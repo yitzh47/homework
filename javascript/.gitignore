@@ -3,3 +3,6 @@ node_modules
 
 #ignore dist folder
 dist
+
+
+build
