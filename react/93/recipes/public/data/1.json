@@ -1,0 +1,9 @@
+{
+        "id": "1",
+        "name": "Pizza",
+        "ingredients": ["dough", "tomato", "cheese"
+    ],
+        "directions": ["mix", "bake", "eat"
+    ],
+        "picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvN1PSDxd-BLz0GkvhLbrehSXm7b7AMQsJOw&usqp=CAU"
+}
