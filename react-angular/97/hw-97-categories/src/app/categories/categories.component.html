@@ -1,0 +1,6 @@
+<select #categorySelect (change)="selectCategory(categorySelect.value)">
+    <option hidden>select a category</option>
+    <option *ngFor=" let category of categories; " [value]="category.id">
+        {{category.name}}
+    </option>
+</select>

@@ -1,0 +1,3 @@
+<app-categories [categories]="appCategories" (selectedCategory)="selectedCategoryProcessor($event)"></app-categories>
+
+<app-items [categoryOfItems]="selectedCategory"></app-items>

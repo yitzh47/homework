@@ -2,10 +2,11 @@ import React from 'react';
 import fetcher from './fetcher';
 import TickerList from './TickerList';
 import { useState, useEffect } from 'react';
+import { apiKey } from './apiKey';
 
 export default function Ticker() {
 
-    const apiKey = "";
+    
     const [listOfTickers, setListOfTickers] = useState([]);
 
     useEffect(() => {

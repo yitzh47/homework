@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import fetcher from './fetcher';
 import ProfileHtml from './ProfileHtml';
+import { apiKey } from './apiKey';
+
 
 export default function SelectedTicker() {
 
@@ -10,7 +12,6 @@ export default function SelectedTicker() {
   const [tickerInfo, setTickerInfo] = useState(null);
   const [tickerQuote, setTickerQuote] = useState(null);
 
-  const apiKey = "";
 
   useEffect(() => {
     (async () => {

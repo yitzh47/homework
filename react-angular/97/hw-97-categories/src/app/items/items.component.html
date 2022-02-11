@@ -1,0 +1,6 @@
+
+    <ul *ngFor="let item of categoryOfItems">
+        <li>{{item.name}} price: {{item.price}}</li>
+    </ul>
+<div *ngIf="categoryOfItems === undefined;">Please select a category.</div>
+<div *ngIf="categoryOfItems !== undefined && !categoryOfItems?.length">No items in this category.</div>
