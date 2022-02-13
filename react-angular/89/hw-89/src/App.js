@@ -8,7 +8,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.zipCodes = ['06710', '10952', '08710'];
-    this.appId = '..............';
+    this.appId = 'a45906b769e3c9c65cc8e6541c05941f';
     this.state = {
       weather: null
     };
@@ -18,12 +18,12 @@ class App extends Component {
   componentDidMount() {
     setTimeout(() => {
       this.fetchWeather(this.zipCodes[0])
-    }, 10000);
+    }, 1000);
   }
 
   async fetchWeather(zip) {
     try {
-      const r = await fetch(`https://api.openweathermap.org/data/2.5/weather?zip=${zip}&appid=${appId}&units=imperial&lang=he`);
+      const r = await fetch(`https://api.openweathermap.org/data/2.5/weather?zip=${zip}&appid=${this.appId}&units=imperial&lang=he`);
       if (!r.ok) {
         throw new Error(`${r.status} ${r.statusText}`);
       }
