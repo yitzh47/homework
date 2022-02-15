@@ -8,7 +8,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.zipCodes = ['06710', '10952', '08710'];
-    this.appId = 'a45906b769e3c9c65cc8e6541c05941f';
+    this.appId = '<AppId>';
     this.state = {
       weather: null
     };

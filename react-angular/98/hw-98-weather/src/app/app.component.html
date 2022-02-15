@@ -3,11 +3,7 @@
 <input #zipInput name="zipInput" type="text" minlength="4" maxlength="5" (change)="validateZip(zipInput.value)" /> 
 <div *ngIf="invalidZip">Zip Code Is Invalid</div>
 <hr />
-<div *ngIf="weather">
-  <h1>Weather in {{weather.name}}</h1>
-  <p>Temperature: {{weather.main.temp}}</p>
-  <p>Humidity: {{weather.main.humidity}}</p>
-</div>
+<app-weather-details [weather]="weather"></app-weather-details>
 <h2>Options:</h2>
 <ul>
   <li>08701</li>
