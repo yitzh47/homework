@@ -1,0 +1,3 @@
+<div *ngFor=" let post of PostsService | async">
+    <app-post [post]="post"></app-post>
+</div>

@@ -1,0 +1,13 @@
+<hr />
+<label for="zipInput">Input Zip: </label>
+<input #zipInput name="zipInput" type="text" minlength="4" maxlength="5" (change)="validateZip(zipInput.value)" /> 
+<div *ngIf="invalidZip">Zip Code Is Invalid</div>
+<hr />
+<app-weather-details [weather]="weather"></app-weather-details>
+<h2>Options:</h2>
+<ul>
+  <li>08701</li>
+  <li>33142</li>
+</ul>
+
+<router-outlet></router-outlet>
