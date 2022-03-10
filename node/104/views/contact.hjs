@@ -1,0 +1,10 @@
+<h1>Contacts</h1> --}}
+
+<div class="formGroup">
+    <label for="first">name:</label>
+    <input id="first" name="firstName" required value="{{#contacts}}{{name}}{{/contacts}}">
+</div>
+<div class="formGroup">
+    <label for="last">phone:</label>
+    <input id="last" name="lastName" required value="{{#contacts}}{{phone}}{{/contacts}}">
+</div>
