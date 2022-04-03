@@ -1,81 +1,58 @@
-
-//sessions not saved correctly
 const express = require('express');
 const app = express();
 const session = require('express-session');
-var logger = require('morgan');
-var path = require('path');
 const bcrypt = require('bcrypt');
 
-app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, 'public')));
 
-
-const { MongoClient, ServerApiVersion } = require('mongodb');
-const uri =
-  'mongodb+srv://<username>:<password>@cluster0.ewygv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
-const client = new MongoClient(uri);
+app.use(session({
+  secret: 'secret',
+  resave: false,
+  saveUninitialized: false
+}));
 
 app.use(require('cors')({
   origin: 'http://localhost:3000',
   credentials: true
 }));
 
-app.use(session({
-  secret: 'secret',
-  /*cookie: {
-    maxAge: 20000,
-    secure: true
-  }*/
-  resave: false,
-  saveUninitialized: false
-}));
-
-
-//sessions not saved correctly
-app.use((req, res, next) => {
-  res.locals.user = req.session?.user;
-  next();
-});
-
-function sessionOnlyMiddleware(req, res, next) {
-  console.log('session only middleware');
-  
-  if (req.session.user || res.locals.user) {
-    console.log("sessionOnlyMiddleware", req.session);
-    next();
-  } else {
-    res.status(401)
-    next();
-  }
-}
+const Mongo  = require('mongodb');
+const MongoClient = Mongo.MongoClient;
+const uri =
+  'mongodb+srv://<username>:<password>@cluster0.ewygv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+const client = new MongoClient(uri);
 
 let posts;
 let passwordsCollection;
 app.use(async (req, res, next) => {
-  let connection = await client.connect();
-  let database = connection.db('blog2');
+  await client.connect();
+  let database = client.db('blog2');
   posts = database.collection('posts');
   passwordsCollection = database.collection('passwords');
-
   next();
 });
 
 
 
-app.route('/register')
+function sessionOnlyMiddleware(req, res, next) {
+  console.log(req.session);
   
+  if (req.session.user) {
+    next();
+  } else {
+    res.sendStatus(401);
+  }
+}
+
+app.route('/register')
   .get((req, res, next) => {
     res.render('layout', { partials: { content: 'register' } });
   })
   .post(async (req, res, next) => {
-
     if (!req.body.username || !req.body.password) {
       return next(new Error('Username and password are required'));
     }
-
     bcrypt.hash(req.body.password, 10, async (err, hash) => {
       if (err) {
         return next(err);
@@ -84,16 +61,13 @@ app.route('/register')
         username: req.body.username,
         hash: hash
       }
-
       await passwordsCollection.insertOne(newRegisterer);
       res.status(204)
     });
   });
 
-
 app.post('/login', async (req, res, next) => {
   let queryForUser = await passwordsCollection.findOne({ username: req.body.username });
-
   bcrypt.compare(req.body.password, queryForUser.hash, (err, result) => {
     if (err) {
       return next(err);
@@ -102,22 +76,19 @@ app.post('/login', async (req, res, next) => {
       return next(new Error('Invalid user name or password'));
     }
     req.session.user = req.body.username;
-    res.locals.user = req.session.user;
-    console.log('req.session.user', req.session.user);
-    res.status(204);
-    res.end();
-   // res.redirect('/');
+    return res.sendStatus(200);
   });
 });
 
 app.get('/logout', (req, res, next) => {
   req.session.destroy();
-  res.send();
+  res.end();
+  
 });
 
 app.route('/posts')
   .get(async (req, res, next) => {
-    console.log("session", req.session, "locals", res.locals);
+    console.log("session", req.session);
     const thePosts = await posts.find().toArray();
     res.send(thePosts);
   })
@@ -134,10 +105,10 @@ app.route('/posts')
     res.send(newPost);
   });
 
-app.post('/posts/:id/comments', /*sessionOnlyMiddleware,*/ async (req, res, next) => {
+app.post('/posts/:id/comments', sessionOnlyMiddleware, async (req, res, next) => {
   const newComment = {
     body: req.body.body,
-    author: 'Kamala',
+    author: req.session.user,
     date: new Date()
   };
 

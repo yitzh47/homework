@@ -6,7 +6,9 @@ export default function Posts() {
 
   useEffect(() => {
     (async () => {
-      const response = await fetch("http://localhost:8080/posts");
+      const response = await fetch("http://localhost:8080/posts", {
+        credentials: 'include',
+      });
       const posts = await response.json();
       setPosts(posts);
     })();
