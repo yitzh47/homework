@@ -20,7 +20,7 @@ app.use(require('cors')({
 const Mongo  = require('mongodb');
 const MongoClient = Mongo.MongoClient;
 const uri =
-  'mongodb+srv://yitzhertz1:test123@cluster0.ewygv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+  'mongodb+srv://<usernme>:<password>@cluster0.ewygv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 const client = new MongoClient(uri);
 
 let posts;
